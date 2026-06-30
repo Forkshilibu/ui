@@ -121,6 +121,21 @@ export const DEFAULT_PRESETS = {
     radius: "default",
     rtl: false,
   },
+  weibo: {
+    title: "Weibo",
+    description: "Lucide / Weibo mobile tokens",
+    style: "weibo",
+    baseColor: "neutral",
+    theme: "orange",
+    chartColor: "orange",
+    iconLibrary: "lucide",
+    font: "inter",
+    fontHeading: "inherit",
+    menuAccent: "bold",
+    menuColor: "default",
+    radius: "default",
+    rtl: false,
+  },
 } satisfies Record<
   PresetConfig["style"],
   PresetConfig & {
