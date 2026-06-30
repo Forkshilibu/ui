@@ -13,6 +13,7 @@
 @custom-variant style-luma (&:where(.style-luma *));
 @custom-variant style-sera (&:where(.style-sera *));
 @custom-variant style-rhea (&:where(.style-rhea *));
+@custom-variant style-weibo (&:where(.style-weibo *));
 
 @custom-variant dark (&:is(.dark *));
 @custom-variant fixed (&:is(.layout-fixed *));

@@ -185,6 +185,36 @@ export const STYLES = [
       </svg>
     ),
   },
+
+  {
+    name: "weibo",
+    title: "Weibo",
+    description: "Mobile-first Weibo orange with PC admin compatibility.",
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="128"
+        height="128"
+        viewBox="0 0 24 24"
+        fill="none"
+        role="img"
+        color="currentColor"
+      >
+        <path
+          d="M4 12C4 8.68629 6.68629 6 10 6H14C17.3137 6 20 8.68629 20 12C20 15.3137 17.3137 18 14 18H10C6.68629 18 4 15.3137 4 12Z"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinejoin="round"
+        ></path>
+        <path
+          d="M8 12H16"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+        ></path>
+      </svg>
+    ),
+  },
 ] as const
 
 export type Style = (typeof STYLES)[number]

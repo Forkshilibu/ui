@@ -21,6 +21,7 @@ export const PRESET_STYLES = [
   "luma",
   "sera",
   "rhea",
+  "weibo",
 ] as const
 
 export const PRESET_BASE_COLORS = [
