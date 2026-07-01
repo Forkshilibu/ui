@@ -1,0 +1,12 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "marker",
+  "files": [
+    {
+      "path": "registry/radix-weibo/ui/marker.tsx",
+      "content": "import * as React from \"react\"\nimport { cva, type VariantProps } from \"class-variance-authority\"\nimport { Slot } from \"radix-ui\"\n\nimport { cn } from \"@/registry/radix-weibo/lib/utils\"\n\nconst markerVariants = cva(\"group/marker relative flex w-full items-center\", {\n  variants: {\n    variant: {\n      default: \"\",\n      separator: \"\",\n      border: \"\",\n    },\n  },\n})\n\nfunction Marker({\n  className,\n  variant = \"default\",\n  asChild = false,\n  ...props\n}: React.ComponentProps<\"div\"> &\n  VariantProps<typeof markerVariants> & {\n    asChild?: boolean\n  }) {\n  const Comp = asChild ? Slot.Root : \"div\"\n\n  return (\n    <Comp\n      data-slot=\"marker\"\n      data-variant={variant}\n      className={cn(markerVariants({ variant, className }))}\n      {...props}\n    />\n  )\n}\n\nfunction MarkerIcon({ className, ...props }: React.ComponentProps<\"span\">) {\n  return (\n    <span\n      data-slot=\"marker-icon\"\n      aria-hidden=\"true\"\n      className={cn(\"shrink-0\", className)}\n      {...props}\n    />\n  )\n}\n\nfunction MarkerContent({ className, ...props }: React.ComponentProps<\"span\">) {\n  return (\n    <span\n      data-slot=\"marker-content\"\n      className={cn(\"min-w-0 wrap-break-word\", className)}\n      {...props}\n    />\n  )\n}\n\nexport { Marker, MarkerIcon, MarkerContent, markerVariants }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,0 +1,84 @@
+:root {
+  --w-c-brand: #ff8200;
+  --w-c-brand-80: #ff8200cc;
+  --w-c-brand-60: #ff820099;
+  --w-c-brand-40: #ff820066;
+  --w-c-brand-20: #ff820033;
+  --w-c-brand-10: #ff82001a;
+  --w-c-content: #333333;
+  --w-c-subtitle: #636363;
+  --w-c-attachment: #939393;
+  --w-c-card: #ffffff;
+  --w-c-global: #f5f5f5;
+  --w-c-dividing: #e6e6e6;
+  --w-c-contrast: #ffffff;
+  --w-c-link: #507daf;
+  --w-c-focus: #f46200;
+  --w-c-alart: #e14123;
+  --w-btn-orange-a: #ff8200;
+  --w-btn-orange-b: #ffbc33;
+  --w-btn-orange-pressed-a: #eb7922;
+  --w-btn-orange-pressed-b: #efb234;
+  --w-btn-orange-fil: #ff82000d;
+  --w-btn-gray: #f6f6f6;
+  --w-btn-gray-pressed: #eaeaea;
+  --w-btn-gray-disabled: #f6f6f680;
+  --w-btn-gray-stroke: #93939366;
+  --w-btn-link: #7593cb;
+  --w-btn-link-pressed: #6785be;
+  --w-btn-link-stroke: #546992;
+  --w-black-80: #000000cc;
+  --w-black-60: #00000099;
+  --w-black-40: #00000066;
+  --w-black-20: #00000033;
+  --w-black-10: #0000001a;
+  --w-white-80: #ffffffcc;
+  --w-white-60: #ffffff99;
+  --w-white-40: #ffffff66;
+  --w-white-20: #ffffff33;
+  --w-white-10: #ffffff1a;
+  --spacing-container-padding: 14px;
+}
+
+.theme-dark {
+  --w-c-brand: #ea8011;
+  --w-c-brand-80: #ea8011cc;
+  --w-c-brand-60: #ffffff;
+  --w-c-brand-40: #ea801166;
+  --w-c-brand-20: #ea801133;
+  --w-c-brand-10: #ea80111a;
+  --w-c-content: #d3d3d3;
+  --w-c-subtitle: #999999;
+  --w-c-attachment: #888888;
+  --w-c-card: #1e1e1e;
+  --w-c-global: #151515;
+  --w-c-dividing: #151515;
+  --w-c-contrast: #d3d3d3;
+  --w-c-link: #7691b9;
+  --w-c-focus: #c95700;
+  --w-c-alart: #d33635;
+  --w-btn-orange-a: #c76d28;
+  --w-btn-orange-b: #ca962b;
+  --w-btn-orange-pressed-a: #a7651e;
+  --w-btn-orange-pressed-b: #ac7c1e;
+  --w-btn-orange-fil: #ea80110d;
+  --w-btn-gray: #2c2c2c;
+  --w-btn-gray-pressed: #272727;
+  --w-btn-gray-disabled: #2c2c2c80;
+  --w-btn-gray-stroke: #8888884d;
+  --w-btn-link: #5c77a9;
+  --w-btn-link-pressed: #5771a0;
+  --w-btn-link-stroke: #7a8ba5;
+}
+
+@media (min-width: 600px) {
+  :root {
+    --spacing-container-padding: 24px;
+  }
+}
+
+@media (min-width: 905px) {
+  :root {
+    --spacing-container-padding: 32px;
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button",
+  "files": [
+    {
+      "path": "registry/radix-weibo/ui/button.tsx",
+      "content": "import * as React from \"react\"\nimport { cva, type VariantProps } from \"class-variance-authority\"\nimport { Slot } from \"radix-ui\"\n\nimport { cn } from \"@/registry/radix-weibo/lib/utils\"\n\nconst buttonVariants = cva(\n  \"text-c-content focus-visible:border-c-focus focus-visible:shadow-orange-glow disabled:bg-btn-gray-disabled disabled:text-c-content-disabled group/button inline-flex min-h-11 shrink-0 items-center justify-center rounded-full border border-transparent bg-clip-padding font-normal whitespace-nowrap transition-all outline-none select-none disabled:pointer-events-none disabled:opacity-100 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4\",\n  {\n    variants: {\n      variant: {\n        default:\n          \"from-btn-orange-a to-btn-orange-b text-c-contrast hover:from-btn-orange-a hover:to-btn-orange-b active:from-btn-orange-pressed-a active:to-btn-orange-pressed-b bg-linear-to-r\",\n        outline:\n          \"border-btn-gray-stroke text-c-content hover:bg-btn-gray-pressed active:bg-btn-gray-pressed aria-expanded:bg-btn-gray-pressed bg-transparent\",\n        secondary:\n          \"bg-btn-gray text-c-content hover:bg-btn-gray-pressed active:bg-btn-gray-pressed aria-expanded:bg-btn-gray-pressed\",\n        ghost:\n          \"text-c-content hover:bg-btn-gray-pressed active:bg-btn-gray-pressed aria-expanded:bg-btn-gray-pressed bg-transparent\",\n        destructive: \"bg-c-alart text-c-contrast\",\n        link: \"text-btn-link hover:text-btn-link-pressed min-h-auto bg-transparent no-underline underline-offset-4 hover:underline\",\n      },\n      size: {\n        default: \"gap-md-compact px-lg text-label-lg min-h-11\",\n        xs: \"gap-sm px-md text-label-sm min-h-8 [&_svg:not([class*='size-'])]:size-3\",\n        sm: \"gap-sm px-md text-label-md min-h-9 [&_svg:not([class*='size-'])]:size-3.5\",\n        lg: \"gap-md-compact px-xl text-label-lg min-h-12\",\n        icon: \"size-11 min-h-11 min-w-11 p-0\",\n        \"icon-xs\":\n          \"size-8 min-h-8 min-w-8 p-0 [&_svg:not([class*='size-'])]:size-3\",\n        \"icon-sm\": \"size-9 min-h-9 min-w-9 p-0\",\n        \"icon-lg\": \"size-12 min-h-12 min-w-12 p-0\",\n      },\n    },\n    defaultVariants: {\n      variant: \"default\",\n      size: \"default\",\n    },\n  }\n)\n\nfunction Button({\n  className,\n  variant = \"default\",\n  size = \"default\",\n  asChild = false,\n  ...props\n}: React.ComponentProps<\"button\"> &\n  VariantProps<typeof buttonVariants> & {\n    asChild?: boolean\n  }) {\n  const Comp = asChild ? Slot.Root : \"button\"\n\n  return (\n    <Comp\n      data-slot=\"button\"\n      data-variant={variant}\n      data-size={size}\n      className={cn(buttonVariants({ variant, size, className }))}\n      {...props}\n    />\n  )\n}\n\nexport { Button, buttonVariants }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "meta": {
+    "links": {
+      "docs": "https://ui.shadcn.com/docs/components/radix/button",
+      "examples": "https://ui.shadcn.com/code/apps/v4/registry/bases/radix/examples/button-example.tsx"
+    }
+  },
+  "type": "registry:ui"
+}
