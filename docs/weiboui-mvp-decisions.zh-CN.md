@@ -73,3 +73,57 @@ pnpm dlx shadcn@latest add https://your-domain.com/r/styles/weibo/button.json
 ## 6. 进入实现前还需要你确认
 
 Design Tokens 已提供，下一步可以开始创建 `tokens/tailwind.preset.js`、`src/theme.css` 与 `style-weibo.css`，并围绕移动端优先、兼容中后台 PC 的 `button` 打通第一条 MVP 链路。
+
+## 7. 接下来需要做什么
+
+现在已经完成了第一轮编码：`weibo` style 已注册，初版 token preset、theme variables 和 button style 已落地。接下来建议按下面顺序推进，避免一次性生成过多无关产物。
+
+### 7.1 生成并验证 registry 输出
+
+1. 先构建基础包，保证本地 `shadcn` 与 `@shadcn/react` 可被 v4 app 解析。
+2. 针对 `radix-weibo` 做局部 registry/style 构建。
+3. 如果局部构建通过，再执行完整 `registry:build`。
+4. 检查 `apps/v4/public/r/styles/radix-weibo/button.json` 是否生成。
+5. 检查 `apps/v4/styles/radix-weibo/ui/button.tsx` 是否生成。
+
+建议命令：
+
+```bash
+pnpm --filter=@shadcn/react build
+pnpm --filter=shadcn build
+pnpm --filter=v4 registry:build -- --style radix-weibo --registry radix-weibo --indexes
+```
+
+### 7.2 补齐 button 文档和示例
+
+Button MVP 组件说明已沉淀到 `docs/weiboui-button-mvp.zh-CN.md`。`button` 是 MVP 首个组件，下一步需要补齐：
+
+- 移动端主按钮示例。
+- 移动端次按钮示例。
+- outline / ghost / destructive / link 示例。
+- loading / disabled / icon button 示例。
+- 暗色模式示例。
+- 中后台 PC 尺寸示例。
+- 通过 registry URL 安装的说明。
+
+### 7.3 建立 Next + Vite 验证应用
+
+详细验证流程已沉淀到 `docs/weiboui-next-vite-validation.zh-CN.md`。需要分别验证：
+
+- Next 项目可以安装 `radix-weibo/button`。
+- Vite 项目可以安装 `radix-weibo/button`。
+- 安装后不依赖当前 monorepo 的私有路径。
+- 暗色模式下 CSS variables 正确切换。
+- Button 不出现任意值色值、任意字号或非标准圆角。
+
+### 7.4 第一阶段验收标准
+
+第一阶段完成标准：
+
+- `weibo` style 能在 style picker 中出现。
+- `radix-weibo` registry JSON 能生成。
+- Next 验证项目能安装并渲染 button。
+- Vite 验证项目能安装并渲染 button。
+- Light / Dark 下 button 视觉可用。
+- 移动端点击热区不小于 44×44px。
+- 不做自有 CLI，继续使用 shadcn CLI 安装。
