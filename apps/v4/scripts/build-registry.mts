@@ -985,7 +985,10 @@ async function buildBases(bases: Base[], targetStyleNames?: Set<string>) {
       await rimraf(styleOutputDir)
       await fs.mkdir(styleOutputDir, { recursive: true })
 
-      const styleRegistry = { ...baseRegistry, items: registryItems }
+      const styleRegistry = {
+        ...baseRegistry,
+        items: registryItems,
+      }
       const registryTs = `export const registry = ${JSON.stringify(styleRegistry, null, 2)}\n`
       await fs.writeFile(path.join(styleOutputDir, "registry.ts"), registryTs)
 

@@ -127,6 +127,7 @@ export const ui: Registry["items"] = [
   {
     name: "button",
     type: "registry:ui",
+    dependencies: ["class-variance-authority"],
     files: [
       {
         path: "ui/button.tsx",
