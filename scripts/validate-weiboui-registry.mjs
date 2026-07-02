@@ -217,6 +217,26 @@ async function main() {
     )
   }
 
+  const registryStyleTokens = [
+    "@theme inline",
+    ".style-weibo",
+    "--color-btn-orange-a",
+    "--w-btn-orange-a",
+    "&.dark, .dark &",
+  ]
+
+  for (const [label, item] of [
+    ["radix-weibo", radixIndex],
+    ["base-weibo", baseIndex],
+  ]) {
+    includesAll(
+      JSON.stringify(item.css ?? {}),
+      registryStyleTokens,
+      `${label} registry style token`,
+      `apps/v4/public/r/styles/${label}/index.json`
+    )
+  }
+
   console.log(
     "weiboUI registry artifacts and Button examples are ready for Next and Vite validation."
   )
