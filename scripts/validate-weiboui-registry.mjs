@@ -45,8 +45,15 @@ const buttonTokenClasses = [
 
 const buttonExampleTokens = [
   "<ButtonThemes />",
+  "<ButtonMobileAndDesktop />",
   "function ButtonThemes()",
+  "function ButtonMobileAndDesktop()",
   'Example title="Light & Dark"',
+  'Example title="Mobile & Desktop"',
+  "Mobile actions",
+  "Desktop toolbar",
+  'aria-label="Open composer settings"',
+  'aria-label="More actions"',
   'className="dark style-weibo',
   'aria-label="Default icon button"',
   'aria-busy="true"',
@@ -117,6 +124,27 @@ async function main() {
       file
     )
   }
+
+  const baseButtonRegistry = JSON.parse(
+    fileContents.get("apps/v4/public/r/styles/base-weibo/button.json")
+  )
+  const radixButtonRegistry = JSON.parse(
+    fileContents.get("apps/v4/public/r/styles/radix-weibo/button.json")
+  )
+
+  includesAll(
+    JSON.stringify(baseButtonRegistry.dependencies ?? []),
+    ["class-variance-authority"],
+    "base button dependency",
+    "apps/v4/public/r/styles/base-weibo/button.json"
+  )
+
+  includesAll(
+    JSON.stringify(radixButtonRegistry.dependencies ?? []),
+    ["class-variance-authority", "radix-ui"],
+    "radix button dependency",
+    "apps/v4/public/r/styles/radix-weibo/button.json"
+  )
 
   const buttonExampleFiles = [
     "apps/v4/registry/bases/base/examples/button-example.tsx",

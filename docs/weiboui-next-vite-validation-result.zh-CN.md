@@ -135,6 +135,77 @@ vite validation static checks passed: /tmp/weiboui-vite-validation/src/component
 4. 分别执行 `pnpm build`。
 5. 启动页面并截图检查 Light / Dark 下按钮视觉。
 
-## 4. 当前判断
+## 4. 2026-07-01 继续验证记录
+
+本轮继续尝试推进真实外部验证，并补齐了安装链路中暴露出的依赖元数据问题。
+
+### 4.1 已执行
+
+1. 重新构建本地包与 registry：
+
+   ```bash
+   pnpm --filter=@shadcn/react build
+   pnpm --filter=shadcn build
+   pnpm --filter=v4 registry:build
+   ```
+
+2. 使用静态 HTTP 服务暴露本地 registry：
+
+   ```bash
+   python3 -m http.server 4000 --directory apps/v4/public
+   ```
+
+3. 确认 registry URL 可读：
+
+   ```bash
+   curl -fsS http://localhost:4000/r/styles/radix-weibo/button.json | python3 -c 'import json,sys; data=json.load(sys.stdin); print(data["name"], data["files"][0]["path"], len(data["files"][0]["content"]))'
+   ```
+
+   输出：
+
+   ```text
+   button registry/radix-weibo/ui/button.tsx 2729
+   ```
+
+4. 再次尝试使用官方脚手架创建全新 Next 项目：
+
+   ```bash
+   pnpm create next-app@latest /tmp/weiboui-ext-next --ts --tailwind --eslint --app --src-dir --import-alias "@/*" --use-pnpm --yes
+   ```
+
+   结果仍受当前容器 npm registry 权限限制阻塞：
+
+   ```text
+   ERR_PNPM_FETCH_403 GET https://registry.npmjs.org/create-next-app: Forbidden - 403
+   ```
+
+5. 使用仓库内 `templates/next-app` 与 `templates/vite-app` 复制临时项目后，通过本地 CLI 安装 `radix-weibo/button`。本次安装正确进入依赖安装阶段，说明 registry JSON 已暴露 Button 运行所需依赖；但依赖下载仍被 npm registry 403 阻塞：
+
+   ```text
+   Command failed with exit code 1: pnpm add class-variance-authority radix-ui
+   ERR_PNPM_FETCH_403 GET https://registry.npmjs.org/class-variance-authority: Forbidden - 403
+   ```
+
+### 4.2 本轮修复
+
+此前 `radix-weibo/button.json` 缺少 `class-variance-authority` 与 `radix-ui` 依赖声明，`base-weibo/button.json` 缺少 `class-variance-authority` 依赖声明，导致外部项目即使生成了 Button 文件，也无法可靠安装运行依赖。
+
+本轮已补齐：
+
+- `base-weibo/button.json` 暴露 `class-variance-authority`。
+- `radix-weibo/button.json` 暴露 `class-variance-authority` 和 `radix-ui`。
+- `pnpm weiboui:validate-registry` 会持续校验上述依赖元数据，防止后续 registry build 回退。
+
+### 4.3 当前结果
+
+| 验证项                                            | 结果   | 说明                                                    |
+| ------------------------------------------------- | ------ | ------------------------------------------------------- |
+| 官方 Next 脚手架创建                              | 阻塞   | npm registry 仍返回 403                                 |
+| 本地 registry URL 可访问                          | 通过   | `radix-weibo/button.json` 可读取                        |
+| `radix-weibo/button` 依赖元数据                   | 通过   | CLI 已尝试安装 `class-variance-authority` 与 `radix-ui` |
+| Next / Vite 临时项目完整安装                      | 阻塞   | 依赖下载阶段被 npm registry 403 中断                    |
+| Next / Vite `pnpm build` 与浏览器 Light/Dark 截图 | 未完成 | 需要在可访问 npm registry 的环境中继续                  |
+
+## 5. 当前判断
 
 本轮已经证明 `radix-weibo/button.json` 可以被 shadcn CLI 从本地 registry URL 读取并写入 Next/Vite 形态的临时项目，且生成物使用业务侧组件路径和 weibo token class。剩余风险主要集中在真实依赖安装、项目 build 和浏览器视觉验证，需要换到可访问 npm registry 的环境继续完成。
