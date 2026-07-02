@@ -6,7 +6,6 @@ import type { Popover as PopoverPrimitive } from "radix-ui"
 
 import { cn } from "@/lib/utils"
 import { useMutationObserver } from "@/hooks/use-mutation-observer"
-import { Button } from "@/registry/new-york-v4/ui/button"
 import {
   Command,
   CommandEmpty,
@@ -26,6 +25,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/registry/new-york-v4/ui/popover"
+import { Button } from "@/styles/radix-weibo/ui/button"
 
 import { type Model, type ModelType } from "../data/models"
 

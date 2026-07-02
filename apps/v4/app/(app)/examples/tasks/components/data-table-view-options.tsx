@@ -3,7 +3,6 @@
 import { type Table } from "@tanstack/react-table"
 import { Settings2 } from "lucide-react"
 
-import { Button } from "@/registry/new-york-v4/ui/button"
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -12,6 +11,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/registry/new-york-v4/ui/dropdown-menu"
+import { Button } from "@/styles/radix-weibo/ui/button"
 
 export function DataTableViewOptions<TData>({
   table,

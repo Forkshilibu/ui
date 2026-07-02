@@ -6,7 +6,7 @@ import {
   BreadcrumbLink,
   BreadcrumbList,
 } from "@/styles/base-sera/ui/breadcrumb"
-import { Button } from "@/styles/base-sera/ui/button"
+import { Button } from "@/styles/radix-weibo/ui/button"
 
 export function PreviewHeader() {
   return (

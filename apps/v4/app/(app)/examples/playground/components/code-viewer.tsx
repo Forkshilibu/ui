@@ -1,4 +1,3 @@
-import { Button } from "@/registry/new-york-v4/ui/button"
 import {
   Dialog,
   DialogContent,
@@ -7,6 +6,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/registry/new-york-v4/ui/dialog"
+import { Button } from "@/styles/radix-weibo/ui/button"
 
 export function CodeViewer() {
   return (

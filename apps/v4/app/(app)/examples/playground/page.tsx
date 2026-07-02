@@ -2,7 +2,6 @@ import { type Metadata } from "next"
 import Image from "next/image"
 import { RotateCcw } from "lucide-react"
 
-import { Button } from "@/registry/new-york-v4/ui/button"
 import {
   HoverCard,
   HoverCardContent,
@@ -17,6 +16,7 @@ import {
   TabsTrigger,
 } from "@/registry/new-york-v4/ui/tabs"
 import { Textarea } from "@/registry/new-york-v4/ui/textarea"
+import { Button } from "@/styles/radix-weibo/ui/button"
 
 import { CodeViewer } from "./components/code-viewer"
 import { MaxLengthSelector } from "./components/maxlength-selector"

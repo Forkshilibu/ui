@@ -19,7 +19,6 @@ import {
   type BaseName,
   type DesignSystemConfig,
 } from "@/registry/config"
-import { Button } from "@/styles/base-nova/ui/button"
 import {
   Dialog,
   DialogContent,
@@ -50,6 +49,7 @@ import {
   ToggleGroup,
   ToggleGroupItem,
 } from "@/styles/base-nova/ui/toggle-group"
+import { Button } from "@/styles/radix-weibo/ui/button"
 import { usePresetCode } from "@/app/(app)/create/hooks/use-design-system"
 import {
   useDesignSystemSearchParams,

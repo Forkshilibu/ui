@@ -1,4 +1,3 @@
-import { Button } from "@/registry/new-york-v4/ui/button"
 import {
   Dialog,
   DialogContent,
@@ -11,6 +10,7 @@ import {
 import { Input } from "@/registry/new-york-v4/ui/input"
 import { Label } from "@/registry/new-york-v4/ui/label"
 import { Textarea } from "@/registry/new-york-v4/ui/textarea"
+import { Button } from "@/styles/radix-weibo/ui/button"
 
 export function PresetSave() {
   return (

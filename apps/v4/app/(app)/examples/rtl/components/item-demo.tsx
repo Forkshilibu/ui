@@ -3,7 +3,6 @@
 import { BadgeCheckIcon, ChevronRightIcon } from "lucide-react"
 
 import { useLanguageContext } from "@/components/language-selector"
-import { Button } from "@/styles/base-nova/ui-rtl/button"
 import {
   Item,
   ItemActions,
@@ -12,6 +11,7 @@ import {
   ItemMedia,
   ItemTitle,
 } from "@/styles/base-nova/ui-rtl/item"
+import { Button } from "@/styles/radix-weibo/ui/button"
 
 const translations = {
   ar: {

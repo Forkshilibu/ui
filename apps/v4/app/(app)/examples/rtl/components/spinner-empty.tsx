@@ -1,7 +1,6 @@
 "use client"
 
 import { useLanguageContext } from "@/components/language-selector"
-import { Button } from "@/styles/base-nova/ui-rtl/button"
 import {
   Empty,
   EmptyContent,
@@ -11,6 +10,7 @@ import {
   EmptyTitle,
 } from "@/styles/base-nova/ui-rtl/empty"
 import { Spinner } from "@/styles/base-nova/ui-rtl/spinner"
+import { Button } from "@/styles/radix-weibo/ui/button"
 
 const translations = {
   ar: {

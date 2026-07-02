@@ -3,8 +3,6 @@
 import { BotIcon, ChevronDownIcon } from "lucide-react"
 
 import { useLanguageContext } from "@/components/language-selector"
-import { Button } from "@/styles/base-nova/ui-rtl/button"
-import { ButtonGroup } from "@/styles/base-nova/ui-rtl/button-group"
 import {
   Popover,
   PopoverContent,
@@ -12,6 +10,8 @@ import {
 } from "@/styles/base-nova/ui-rtl/popover"
 import { Separator } from "@/styles/base-nova/ui-rtl/separator"
 import { Textarea } from "@/styles/base-nova/ui-rtl/textarea"
+import { Button } from "@/styles/radix-weibo/ui/button"
+import { ButtonGroup } from "@/styles/radix-weibo/ui/button-group"
 
 const translations = {
   ar: {

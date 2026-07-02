@@ -3,7 +3,6 @@
 import { IconCheck, IconChevronDown, IconCopy } from "@tabler/icons-react"
 
 import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard"
-import { Button } from "@/registry/new-york-v4/ui/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -17,6 +16,7 @@ import {
   PopoverTrigger,
 } from "@/registry/new-york-v4/ui/popover"
 import { Separator } from "@/registry/new-york-v4/ui/separator"
+import { Button } from "@/styles/radix-weibo/ui/button"
 
 function getPromptUrl(baseURL: string, url: string) {
   return `${baseURL}?q=${encodeURIComponent(

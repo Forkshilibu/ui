@@ -3,7 +3,6 @@
 import * as React from "react"
 import { MoveRightIcon } from "lucide-react"
 
-import { Button } from "@/styles/base-sera/ui/button"
 import {
   Card,
   CardContent,
@@ -17,6 +16,7 @@ import {
   ProgressLabel,
   ProgressValue,
 } from "@/styles/base-sera/ui/progress"
+import { Button } from "@/styles/radix-weibo/ui/button"
 
 const DEMOGRAPHIC_DATA = [
   { age: "18 - 24", percentage: 22 },

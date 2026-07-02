@@ -1,7 +1,6 @@
 import { FileTextIcon, PlusIcon } from "lucide-react"
 
 import { Badge } from "@/styles/base-sera/ui/badge"
-import { Button } from "@/styles/base-sera/ui/button"
 import { Card, CardContent } from "@/styles/base-sera/ui/card"
 import {
   Empty,
@@ -12,6 +11,7 @@ import {
   EmptyTitle,
 } from "@/styles/base-sera/ui/empty"
 import { Separator } from "@/styles/base-sera/ui/separator"
+import { Button } from "@/styles/radix-weibo/ui/button"
 
 type Stage = {
   id: string

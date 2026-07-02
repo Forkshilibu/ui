@@ -1,5 +1,4 @@
 import { Badge } from "@/styles/base-rhea/ui/badge"
-import { Button } from "@/styles/base-rhea/ui/button"
 import {
   Card,
   CardAction,
@@ -10,6 +9,7 @@ import {
   CardTitle,
 } from "@/styles/base-rhea/ui/card"
 import { Item, ItemContent, ItemDescription } from "@/styles/base-rhea/ui/item"
+import { Button } from "@/styles/radix-weibo/ui/button"
 
 const chartData = [
   { month: "Dec", amount: 800 },

@@ -2,7 +2,6 @@
 
 import * as React from "react"
 
-import { Button } from "@/registry/new-york-v4/ui/button"
 import {
   Card,
   CardContent,
@@ -20,6 +19,7 @@ import {
   SelectValue,
 } from "@/registry/new-york-v4/ui/select"
 import { Textarea } from "@/registry/new-york-v4/ui/textarea"
+import { Button } from "@/styles/radix-weibo/ui/button"
 
 export function CardsReportIssue() {
   const id = React.useId()

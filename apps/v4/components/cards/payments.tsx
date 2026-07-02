@@ -15,7 +15,6 @@ import {
 } from "@tanstack/react-table"
 import { MoreHorizontalIcon } from "lucide-react"
 
-import { Button } from "@/registry/new-york-v4/ui/button"
 import {
   Card,
   CardAction,
@@ -41,6 +40,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/registry/new-york-v4/ui/table"
+import { Button } from "@/styles/radix-weibo/ui/button"
 
 const data: Payment[] = [
   {

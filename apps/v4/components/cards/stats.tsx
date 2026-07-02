@@ -2,7 +2,6 @@
 
 import { Area, AreaChart, Line, LineChart } from "recharts"
 
-import { Button } from "@/registry/new-york-v4/ui/button"
 import {
   Card,
   CardAction,
@@ -15,6 +14,7 @@ import {
   ChartContainer,
   type ChartConfig,
 } from "@/registry/new-york-v4/ui/chart"
+import { Button } from "@/styles/radix-weibo/ui/button"
 
 const data = [
   {

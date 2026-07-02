@@ -1,6 +1,5 @@
 "use client"
 
-import { Button } from "@/registry/new-york-v4/ui/button"
 import {
   Card,
   CardContent,
@@ -15,6 +14,7 @@ import {
   FieldSeparator,
 } from "@/registry/new-york-v4/ui/field"
 import { Input } from "@/registry/new-york-v4/ui/input"
+import { Button } from "@/styles/radix-weibo/ui/button"
 
 export function CardsCreateAccount() {
   return (

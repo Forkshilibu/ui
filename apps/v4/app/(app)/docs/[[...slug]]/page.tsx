@@ -11,7 +11,7 @@ import { DocsBaseSwitcher } from "@/components/docs-base-switcher"
 import { DocsCopyPage } from "@/components/docs-copy-page"
 import { DocsTableOfContents } from "@/components/docs-toc"
 import { OpenInV0Cta } from "@/components/open-in-v0-cta"
-import { Button } from "@/registry/new-york-v4/ui/button"
+import { Button } from "@/styles/radix-weibo/ui/button"
 
 export const revalidate = false
 export const dynamic = "force-static"

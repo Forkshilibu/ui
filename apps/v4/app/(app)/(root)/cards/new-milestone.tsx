@@ -1,4 +1,3 @@
-import { Button } from "@/styles/base-rhea/ui/button"
 import {
   Card,
   CardContent,
@@ -9,6 +8,7 @@ import {
 } from "@/styles/base-rhea/ui/card"
 import { Field, FieldGroup, FieldLabel } from "@/styles/base-rhea/ui/field"
 import { Input } from "@/styles/base-rhea/ui/input"
+import { Button } from "@/styles/radix-weibo/ui/button"
 
 export function NewMilestone() {
   return (

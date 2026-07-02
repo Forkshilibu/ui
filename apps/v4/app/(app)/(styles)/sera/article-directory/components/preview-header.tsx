@@ -8,8 +8,8 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/styles/base-sera/ui/breadcrumb"
-import { Button } from "@/styles/base-sera/ui/button"
-import { ButtonGroup } from "@/styles/base-sera/ui/button-group"
+import { Button } from "@/styles/radix-weibo/ui/button"
+import { ButtonGroup } from "@/styles/radix-weibo/ui/button-group"
 
 export function PreviewHeader() {
   return (

@@ -7,7 +7,6 @@ import {
 } from "lucide-react"
 
 import { Badge } from "@/styles/base-sera/ui/badge"
-import { Button } from "@/styles/base-sera/ui/button"
 import { Card, CardContent, CardFooter } from "@/styles/base-sera/ui/card"
 import {
   Item,
@@ -16,6 +15,7 @@ import {
   ItemTitle,
 } from "@/styles/base-sera/ui/item"
 import { Separator } from "@/styles/base-sera/ui/separator"
+import { Button } from "@/styles/radix-weibo/ui/button"
 
 import { type Asset, type AssetType } from "../data"
 

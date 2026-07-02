@@ -1,7 +1,6 @@
 "use client"
 
 import { useLanguageContext } from "@/components/language-selector"
-import { Button } from "@/styles/base-nova/ui-rtl/button"
 import { Checkbox } from "@/styles/base-nova/ui-rtl/checkbox"
 import {
   Field,
@@ -22,6 +21,7 @@ import {
   SelectValue,
 } from "@/styles/base-nova/ui-rtl/select"
 import { Textarea } from "@/styles/base-nova/ui-rtl/textarea"
+import { Button } from "@/styles/radix-weibo/ui/button"
 
 const translations = {
   ar: {

@@ -4,7 +4,6 @@ import * as React from "react"
 
 import { cn } from "@/lib/utils"
 import { Icons } from "@/components/icons"
-import { Button } from "@/registry/new-york-v4/ui/button"
 import {
   Field,
   FieldGroup,
@@ -13,6 +12,7 @@ import {
 } from "@/registry/new-york-v4/ui/field"
 import { Input } from "@/registry/new-york-v4/ui/input"
 import { Spinner } from "@/registry/new-york-v4/ui/spinner"
+import { Button } from "@/styles/radix-weibo/ui/button"
 
 export function UserAuthForm({
   className,

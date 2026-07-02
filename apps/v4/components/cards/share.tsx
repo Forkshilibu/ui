@@ -5,7 +5,6 @@ import {
   AvatarFallback,
   AvatarImage,
 } from "@/registry/new-york-v4/ui/avatar"
-import { Button } from "@/registry/new-york-v4/ui/button"
 import {
   Card,
   CardContent,
@@ -31,6 +30,7 @@ import {
   SelectValue,
 } from "@/registry/new-york-v4/ui/select"
 import { Separator } from "@/registry/new-york-v4/ui/separator"
+import { Button } from "@/styles/radix-weibo/ui/button"
 
 const people = [
   {

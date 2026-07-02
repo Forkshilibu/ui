@@ -3,7 +3,6 @@
 import { type Row } from "@tanstack/react-table"
 import { MoreHorizontal } from "lucide-react"
 
-import { Button } from "@/registry/new-york-v4/ui/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -17,6 +16,7 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/registry/new-york-v4/ui/dropdown-menu"
+import { Button } from "@/styles/radix-weibo/ui/button"
 
 import { labels } from "../data/data"
 import { taskSchema } from "../data/schema"

@@ -1,6 +1,5 @@
 import { Copy } from "lucide-react"
 
-import { Button } from "@/registry/new-york-v4/ui/button"
 import { Input } from "@/registry/new-york-v4/ui/input"
 import { Label } from "@/registry/new-york-v4/ui/label"
 import {
@@ -8,6 +7,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/registry/new-york-v4/ui/popover"
+import { Button } from "@/styles/radix-weibo/ui/button"
 
 export function PresetShare() {
   return (

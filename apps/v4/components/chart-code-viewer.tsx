@@ -6,7 +6,6 @@ import { ChartCopyButton } from "@/components/chart-copy-button"
 import { type Chart } from "@/components/chart-display"
 import { getIconForLanguageExtension } from "@/components/icons"
 import { OpenInV0Button } from "@/components/open-in-v0-button"
-import { Button } from "@/registry/new-york-v4/ui/button"
 import {
   Drawer,
   DrawerContent,
@@ -23,6 +22,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/registry/new-york-v4/ui/sheet"
+import { Button } from "@/styles/radix-weibo/ui/button"
 
 export function ChartCodeViewer({
   chart,

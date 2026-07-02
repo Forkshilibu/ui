@@ -1,4 +1,3 @@
-import { Button } from "@/styles/base-rhea/ui/button"
 import {
   Card,
   CardContent,
@@ -15,6 +14,7 @@ import {
   FieldGroup,
   FieldLabel,
 } from "@/styles/base-rhea/ui/field"
+import { Button } from "@/styles/radix-weibo/ui/button"
 
 const NOTIFICATIONS = [
   {

@@ -5,7 +5,6 @@ import { IconCheck, IconCopy, IconTerminal } from "@tabler/icons-react"
 
 import { useConfig } from "@/hooks/use-config"
 import { copyToClipboardWithMeta } from "@/components/copy-button"
-import { Button } from "@/registry/new-york-v4/ui/button"
 import {
   Tabs,
   TabsContent,
@@ -17,6 +16,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/registry/new-york-v4/ui/tooltip"
+import { Button } from "@/styles/radix-weibo/ui/button"
 
 export function CodeBlockCommand({
   __npm__,

@@ -14,7 +14,6 @@ import {
   DirectoryAddButton,
   DirectoryAddProvider,
 } from "@/components/directory-add-button"
-import { Button, buttonVariants } from "@/styles/base-nova/ui/button"
 import {
   Item,
   ItemActions,
@@ -33,6 +32,7 @@ import {
   PaginationItem,
 } from "@/styles/base-nova/ui/pagination"
 import { Skeleton } from "@/styles/base-nova/ui/skeleton"
+import { Button, buttonVariants } from "@/styles/radix-weibo/ui/button"
 
 import { SearchDirectory } from "./directory-search"
 

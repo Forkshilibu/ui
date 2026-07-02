@@ -3,7 +3,6 @@ import {
   AvatarFallback,
   AvatarImage,
 } from "@/registry/new-york-v4/ui/avatar"
-import { Button } from "@/registry/new-york-v4/ui/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -14,6 +13,7 @@ import {
   DropdownMenuShortcut,
   DropdownMenuTrigger,
 } from "@/registry/new-york-v4/ui/dropdown-menu"
+import { Button } from "@/styles/radix-weibo/ui/button"
 
 export function UserNav() {
   return (

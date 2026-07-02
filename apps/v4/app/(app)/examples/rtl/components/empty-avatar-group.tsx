@@ -9,7 +9,6 @@ import {
   AvatarGroup,
   AvatarImage,
 } from "@/styles/base-nova/ui-rtl/avatar"
-import { Button } from "@/styles/base-nova/ui-rtl/button"
 import {
   Empty,
   EmptyContent,
@@ -18,6 +17,7 @@ import {
   EmptyMedia,
   EmptyTitle,
 } from "@/styles/base-nova/ui-rtl/empty"
+import { Button } from "@/styles/radix-weibo/ui/button"
 
 const translations = {
   ar: {

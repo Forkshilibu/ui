@@ -4,8 +4,6 @@ import * as React from "react"
 import { AudioLinesIcon, PlusIcon } from "lucide-react"
 
 import { useLanguageContext } from "@/components/language-selector"
-import { Button } from "@/styles/base-nova/ui-rtl/button"
-import { ButtonGroup } from "@/styles/base-nova/ui-rtl/button-group"
 import {
   InputGroup,
   InputGroupAddon,
@@ -17,6 +15,8 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/styles/base-nova/ui-rtl/tooltip"
+import { Button } from "@/styles/radix-weibo/ui/button"
+import { ButtonGroup } from "@/styles/radix-weibo/ui/button-group"
 
 const translations = {
   ar: {

@@ -55,7 +55,6 @@ import { z } from "zod"
 
 import { useIsMobile } from "@/registry/new-york-v4/hooks/use-mobile"
 import { Badge } from "@/registry/new-york-v4/ui/badge"
-import { Button } from "@/registry/new-york-v4/ui/button"
 import {
   ChartContainer,
   ChartTooltip,
@@ -105,6 +104,7 @@ import {
   TabsList,
   TabsTrigger,
 } from "@/registry/new-york-v4/ui/tabs"
+import { Button } from "@/styles/radix-weibo/ui/button"
 
 export const schema = z.object({
   id: z.number(),
