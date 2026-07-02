@@ -9,6 +9,8 @@ import {
 import { Button } from "@/styles/radix-weibo/ui/button"
 import { IconPlaceholder } from "@/app/(create)/components/icon-placeholder"
 
+import styles from "./weibo-preview.module.css"
+
 const title = "Weibo Button Preview"
 const description =
   "A focused preview for the Weibo Button style, including variants, states, light/dark tokens, install notes, and mobile/desktop layouts."
@@ -30,7 +32,9 @@ export default function WeiboPage() {
       </PageHeader>
       <main className="container-wrapper flex-1 px-0 pb-16">
         <div className="container flex flex-col gap-6 px-4 md:px-6">
-          <section className="style-weibo grid gap-4 rounded-3xl border bg-white p-4 md:p-6">
+          <section
+            className={`style-weibo ${styles.weiboPreview} grid gap-4 rounded-3xl border bg-white p-4 md:p-6`}
+          >
             <div>
               <h2 className="text-xl font-semibold tracking-tight">
                 Weibo Button
