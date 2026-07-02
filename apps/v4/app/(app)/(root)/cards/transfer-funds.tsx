@@ -1,7 +1,6 @@
 import { Cancel01Icon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 
-import { Button } from "@/styles/base-rhea/ui/button"
 import {
   Card,
   CardAction,
@@ -28,6 +27,7 @@ import {
   SelectValue,
 } from "@/styles/base-rhea/ui/select"
 import { Separator } from "@/styles/base-rhea/ui/separator"
+import { Button } from "@/styles/radix-weibo/ui/button"
 
 const FROM_ACCOUNTS = [
   { label: "Main Checking (··8402) — $12,450.00", value: "checking" },

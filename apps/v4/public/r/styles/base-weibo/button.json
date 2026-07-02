@@ -1,6 +1,9 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "button",
+  "dependencies": [
+    "class-variance-authority"
+  ],
   "files": [
     {
       "path": "registry/base-weibo/ui/button.tsx",

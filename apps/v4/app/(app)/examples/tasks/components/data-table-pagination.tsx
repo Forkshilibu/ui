@@ -6,7 +6,6 @@ import {
   ChevronsRight,
 } from "lucide-react"
 
-import { Button } from "@/registry/new-york-v4/ui/button"
 import {
   Select,
   SelectContent,
@@ -14,6 +13,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/registry/new-york-v4/ui/select"
+import { Button } from "@/styles/radix-weibo/ui/button"
 
 interface DataTablePaginationProps<TData> {
   table: Table<TData>

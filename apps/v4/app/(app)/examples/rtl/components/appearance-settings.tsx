@@ -4,8 +4,6 @@ import * as React from "react"
 import { IconMinus, IconPlus } from "@tabler/icons-react"
 
 import { useLanguageContext } from "@/components/language-selector"
-import { Button } from "@/styles/base-nova/ui-rtl/button"
-import { ButtonGroup } from "@/styles/base-nova/ui-rtl/button-group"
 import {
   Field,
   FieldContent,
@@ -23,6 +21,8 @@ import {
   RadioGroupItem,
 } from "@/styles/base-nova/ui-rtl/radio-group"
 import { Switch } from "@/styles/base-nova/ui-rtl/switch"
+import { Button } from "@/styles/radix-weibo/ui/button"
+import { ButtonGroup } from "@/styles/radix-weibo/ui/button-group"
 
 const translations = {
   ar: {

@@ -1,5 +1,4 @@
 import { Badge } from "@/styles/base-rhea/ui/badge"
-import { Button } from "@/styles/base-rhea/ui/button"
 import {
   Card,
   CardAction,
@@ -7,6 +6,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/styles/base-rhea/ui/card"
+import { Button } from "@/styles/radix-weibo/ui/button"
 
 const areaPath = "M0 52L18 40L36 46L54 70L72 50L100 49V86H0Z"
 const strokePath = "M0 52L18 40L36 46L54 70L72 50L100 49"

@@ -1,7 +1,6 @@
 import { Add01Icon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 
-import { Button } from "@/styles/base-rhea/ui/button"
 import { Card, CardContent } from "@/styles/base-rhea/ui/card"
 import {
   Empty,
@@ -11,6 +10,7 @@ import {
   EmptyMedia,
   EmptyTitle,
 } from "@/styles/base-rhea/ui/empty"
+import { Button } from "@/styles/radix-weibo/ui/button"
 
 export function EmptyDistributeTrack() {
   return (

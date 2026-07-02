@@ -4,7 +4,6 @@ import { Check, PlusCircle } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { Badge } from "@/registry/new-york-v4/ui/badge"
-import { Button } from "@/registry/new-york-v4/ui/button"
 import {
   Command,
   CommandEmpty,
@@ -20,6 +19,7 @@ import {
   PopoverTrigger,
 } from "@/registry/new-york-v4/ui/popover"
 import { Separator } from "@/registry/new-york-v4/ui/separator"
+import { Button } from "@/styles/radix-weibo/ui/button"
 
 interface DataTableFacetedFilterProps<TData, TValue> {
   column?: Column<TData, TValue>

@@ -33,7 +33,6 @@ import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard"
 import { getIconForLanguageExtension } from "@/components/icons"
 import { OpenInV0Button } from "@/components/open-in-v0-button"
 import { type Style } from "@/registry/_legacy-styles"
-import { Button } from "@/registry/new-york-v4/ui/button"
 import {
   Collapsible,
   CollapsibleContent,
@@ -61,6 +60,7 @@ import {
   ToggleGroup,
   ToggleGroupItem,
 } from "@/registry/new-york-v4/ui/toggle-group"
+import { Button } from "@/styles/radix-weibo/ui/button"
 
 type BlockViewerContext = {
   item: z.infer<typeof registryItemSchema>

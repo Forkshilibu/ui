@@ -10,7 +10,6 @@ import {
 } from "lucide-react"
 
 import { Badge } from "@/styles/base-sera/ui/badge"
-import { Button } from "@/styles/base-sera/ui/button"
 import {
   Card,
   CardContent,
@@ -45,6 +44,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/styles/base-sera/ui/table"
+import { Button } from "@/styles/radix-weibo/ui/button"
 
 import { ASSETS, type AssetType } from "../../media-library/data"
 

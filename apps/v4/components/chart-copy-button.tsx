@@ -5,12 +5,12 @@ import { IconCheck, IconCopy } from "@tabler/icons-react"
 
 import { trackEvent, type Event } from "@/lib/events"
 import { cn } from "@/lib/utils"
-import { Button } from "@/registry/new-york-v4/ui/button"
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
 } from "@/registry/new-york-v4/ui/tooltip"
+import { Button } from "@/styles/radix-weibo/ui/button"
 
 export function ChartCopyButton({
   event,

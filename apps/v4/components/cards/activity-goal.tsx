@@ -4,7 +4,6 @@ import * as React from "react"
 import { MinusIcon, PlusIcon } from "lucide-react"
 import { Bar, BarChart } from "recharts"
 
-import { Button } from "@/registry/new-york-v4/ui/button"
 import {
   Card,
   CardContent,
@@ -17,6 +16,7 @@ import {
   ChartContainer,
   type ChartConfig,
 } from "@/registry/new-york-v4/ui/chart"
+import { Button } from "@/styles/radix-weibo/ui/button"
 
 const data = [
   {

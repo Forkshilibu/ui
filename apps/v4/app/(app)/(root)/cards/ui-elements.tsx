@@ -19,8 +19,6 @@ import {
   AlertDialogTrigger,
 } from "@/styles/base-rhea/ui/alert-dialog"
 import { Badge } from "@/styles/base-rhea/ui/badge"
-import { Button } from "@/styles/base-rhea/ui/button"
-import { ButtonGroup } from "@/styles/base-rhea/ui/button-group"
 import { Card, CardContent } from "@/styles/base-rhea/ui/card"
 import { Checkbox } from "@/styles/base-rhea/ui/checkbox"
 import {
@@ -48,6 +46,8 @@ import {
   TabsTrigger,
 } from "@/styles/base-rhea/ui/tabs"
 import { Textarea } from "@/styles/base-rhea/ui/textarea"
+import { Button } from "@/styles/radix-weibo/ui/button"
+import { ButtonGroup } from "@/styles/radix-weibo/ui/button-group"
 
 export function UIElements() {
   return (

@@ -14,8 +14,6 @@ import {
 } from "lucide-react"
 
 import { useLanguageContext } from "@/components/language-selector"
-import { Button } from "@/styles/base-nova/ui-rtl/button"
-import { ButtonGroup } from "@/styles/base-nova/ui-rtl/button-group"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -30,6 +28,8 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/styles/base-nova/ui-rtl/dropdown-menu"
+import { Button } from "@/styles/radix-weibo/ui/button"
+import { ButtonGroup } from "@/styles/radix-weibo/ui/button-group"
 
 const translations = {
   ar: {

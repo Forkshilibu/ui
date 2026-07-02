@@ -1,6 +1,5 @@
 "use client"
 
-import { Button } from "@/registry/new-york-v4/ui/button"
 import {
   Card,
   CardContent,
@@ -22,6 +21,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/registry/new-york-v4/ui/select"
+import { Button } from "@/styles/radix-weibo/ui/button"
 
 const plans = [
   {

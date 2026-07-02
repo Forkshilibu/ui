@@ -17,7 +17,6 @@ import { cn } from "@/lib/utils"
 import { useConfig } from "@/hooks/use-config"
 import { useMutationObserver } from "@/hooks/use-mutation-observer"
 import { copyToClipboardWithMeta } from "@/components/copy-button"
-import { Button } from "@/registry/new-york-v4/ui/button"
 import {
   Command,
   CommandEmpty,
@@ -38,6 +37,7 @@ import {
 import { Separator } from "@/registry/new-york-v4/ui/separator"
 import { Spinner } from "@/registry/new-york-v4/ui/spinner"
 import { STYLES } from "@/registry/styles"
+import { Button } from "@/styles/radix-weibo/ui/button"
 
 export function CommandMenu({
   tree,

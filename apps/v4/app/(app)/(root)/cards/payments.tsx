@@ -15,7 +15,6 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/styles/base-rhea/ui/breadcrumb"
-import { Button } from "@/styles/base-rhea/ui/button"
 import { Card, CardContent, CardHeader } from "@/styles/base-rhea/ui/card"
 import {
   DropdownMenu,
@@ -32,6 +31,7 @@ import {
   ItemMedia,
   ItemTitle,
 } from "@/styles/base-rhea/ui/item"
+import { Button } from "@/styles/radix-weibo/ui/button"
 
 export function Payments() {
   return (

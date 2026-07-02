@@ -9,7 +9,6 @@ import {
   AvatarFallback,
   AvatarImage,
 } from "@/registry/new-york-v4/ui/avatar"
-import { Button } from "@/registry/new-york-v4/ui/button"
 import {
   Card,
   CardContent,
@@ -44,6 +43,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/registry/new-york-v4/ui/tooltip"
+import { Button } from "@/styles/radix-weibo/ui/button"
 
 const users = [
   {

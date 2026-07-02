@@ -1,7 +1,6 @@
 import { Cancel01Icon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 
-import { Button } from "@/styles/base-rhea/ui/button"
 import {
   Card,
   CardAction,
@@ -27,6 +26,7 @@ import {
   SelectValue,
 } from "@/styles/base-rhea/ui/select"
 import { Textarea } from "@/styles/base-rhea/ui/textarea"
+import { Button } from "@/styles/radix-weibo/ui/button"
 
 const CURRENCIES = [
   { label: "USD — United States Dollar", value: "usd" },

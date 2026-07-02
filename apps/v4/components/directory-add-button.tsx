@@ -6,7 +6,6 @@ import { IconCheck, IconCopy, IconPlus } from "@tabler/icons-react"
 import { useConfig } from "@/hooks/use-config"
 import { useIsMobile } from "@/hooks/use-mobile"
 import { copyToClipboardWithMeta } from "@/components/copy-button"
-import { Button } from "@/styles/base-nova/ui/button"
 import {
   Dialog,
   DialogClose,
@@ -36,6 +35,7 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/styles/base-nova/ui/tooltip"
+import { Button } from "@/styles/radix-weibo/ui/button"
 
 const DirectoryAddContext = React.createContext<{
   open: (registry: { name: string }) => void

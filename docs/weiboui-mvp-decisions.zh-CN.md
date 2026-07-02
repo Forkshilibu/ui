@@ -70,33 +70,70 @@ pnpm dlx shadcn@latest add https://your-domain.com/r/styles/weibo/button.json
 6. 使用 Next 与 Vite 验证应用分别通过 registry URL 安装 button。
 7. 暂不做自有 CLI，继续复用 shadcn CLI。
 
-## 6. 进入实现前还需要你确认
+## 6. 当前实现状态
 
-Design Tokens 已提供，下一步可以开始创建 `tokens/tailwind.preset.js`、`src/theme.css` 与 `style-weibo.css`，并围绕移动端优先、兼容中后台 PC 的 `button` 打通第一条 MVP 链路。
+截至 2026-07-01，第一阶段 MVP 已经从“进入实现前确认”推进到“Button registry 链路已打通，等待完整外部构建与视觉验收”的状态。
+
+已完成：
+
+1. `weibo` style id 已确认并注册。
+2. `tokens/tailwind.preset.js`、`src/theme.css` 与 `apps/v4/registry/styles/style-weibo.css` 已落地初版 token。
+3. Light / Dark 两套 CSS variables 已接入 `.style-weibo`。
+4. `base-weibo` 与 `radix-weibo` 的 `button` registry 输出已生成。
+5. Button 示例已覆盖 Light / Dark、loading、disabled、icon button 与常用变体。
+6. Next 与 Vite 的受限环境安装验证已完成：可以通过本地 registry URL 安装 `radix-weibo/button`，且生成物不依赖当前 monorepo 私有路径。
+7. `pnpm weiboui:validate-registry` 已加入根脚本，用于持续校验 weiboUI registry 产物。
+
+仍需完成：
+
+1. 在可访问 npm registry 的环境中使用官方脚手架创建全新 Next / Vite 项目。
+2. 在真实外部项目内执行 `pnpm dlx shadcn@latest init` 与 registry URL 安装。
+3. 分别执行 Next / Vite 的 `pnpm build`。
+4. 启动页面并截图验收 Light / Dark 下 Button 视觉。
+5. 梳理 npm 包发布前的包名、CSS 入口、版本策略与 smoke test。
 
 ## 7. 接下来需要做什么
 
-现在已经完成了第一轮编码：`weibo` style 已注册，初版 token preset、theme variables 和 button style 已落地。接下来建议按下面顺序推进，避免一次性生成过多无关产物。
+现在已经完成 Button MVP 的第一条 registry 安装链路。接下来建议按下面顺序推进，避免在 npm 发布前遗漏外部项目验证和视觉验收。
 
-### 7.1 生成并验证 registry 输出
+### 7.1 维持 registry 输出可验证
 
-1. 先构建基础包，保证本地 `shadcn` 与 `@shadcn/react` 可被 v4 app 解析。
-2. 针对 `radix-weibo` 做局部 registry/style 构建。
-3. 如果局部构建通过，再执行完整 `registry:build`。
-4. 检查 `apps/v4/public/r/styles/radix-weibo/button.json` 是否生成。
-5. 检查 `apps/v4/styles/radix-weibo/ui/button.tsx` 是否生成。
+每次修改 weibo tokens、Button 样式或 Button 示例后，都应该重新执行 registry build，并运行 weiboUI 专用校验。
 
 建议命令：
 
 ```bash
 pnpm --filter=@shadcn/react build
 pnpm --filter=shadcn build
-pnpm --filter=v4 registry:build -- --style radix-weibo --registry radix-weibo --indexes
+pnpm --filter=v4 registry:build
+pnpm weiboui:validate-registry
 ```
 
-### 7.2 补齐 button 文档和示例
+当前 `pnpm weiboui:validate-registry` 会检查：
 
-Button MVP 组件说明已沉淀到 `docs/weiboui-button-mvp.zh-CN.md`。`button` 是 MVP 首个组件，下一步需要补齐：
+- `style-weibo.css` 是否存在关键 token 映射。
+- `apps/v4/app/globals.css` 是否注册 `style-weibo` variant。
+- `apps/v4/app/style-registry.css` 是否导入 weibo style。
+- `base-weibo` / `radix-weibo` 的 registry index、button 与 button example 是否存在。
+- 生成后的 Button 源码是否包含关键 weibo token class。
+- Button 示例 registry 内容是否与源文件同步。
+
+### 7.2 完成真实 Next + Vite 外部项目验证
+
+详细验证流程已沉淀到 `docs/weiboui-next-vite-validation.zh-CN.md`，当前受限环境结果见 `docs/weiboui-next-vite-validation-result.zh-CN.md`。
+
+需要在可访问 npm registry 的环境中补齐：
+
+1. 使用 `pnpm create next-app@latest` 创建全新 Next 项目。
+2. 使用 `pnpm create vite@latest --template react-ts` 创建全新 Vite 项目。
+3. 分别执行 `pnpm dlx shadcn@latest init`。
+4. 分别执行 `pnpm dlx shadcn@latest add http://localhost:4000/r/styles/radix-weibo/button.json`。
+5. 分别执行 `pnpm build`。
+6. 启动页面并截图检查 Light / Dark 下按钮视觉。
+
+### 7.3 补齐 button 文档和展示
+
+Button MVP 组件说明已沉淀到 `docs/weiboui-button-mvp.zh-CN.md`。下一步需要把文档说明转成站点可见展示，至少覆盖：
 
 - 移动端主按钮示例。
 - 移动端次按钮示例。
@@ -106,17 +143,17 @@ Button MVP 组件说明已沉淀到 `docs/weiboui-button-mvp.zh-CN.md`。`button
 - 中后台 PC 尺寸示例。
 - 通过 registry URL 安装的说明。
 
-### 7.3 建立 Next + Vite 验证应用
+### 7.4 准备 npm 发布前检查清单
 
-详细验证流程已沉淀到 `docs/weiboui-next-vite-validation.zh-CN.md`。需要分别验证：
+MVP 目标包含发布 npm 包，但暂不做自有 CLI。因此发布前至少需要确认：
 
-- Next 项目可以安装 `radix-weibo/button`。
-- Vite 项目可以安装 `radix-weibo/button`。
-- 安装后不依赖当前 monorepo 的私有路径。
-- 暗色模式下 CSS variables 正确切换。
-- Button 不出现任意值色值、任意字号或非标准圆角。
+1. 包名使用 `@weibo/react`、`@weibo/ui`，还是其他命名。
+2. `style-weibo.css` 是否需要拆成 npm 可消费的 CSS 入口。
+3. registry URL 安装与 npm 包消费之间的边界。
+4. 发布 tag、版本号策略和 changelog 规则。
+5. 发布前 smoke test：外部 Next、Vite 项目安装、build、截图。
 
-### 7.4 第一阶段验收标准
+### 7.5 第一阶段验收标准
 
 第一阶段完成标准：
 
@@ -127,3 +164,5 @@ Button MVP 组件说明已沉淀到 `docs/weiboui-button-mvp.zh-CN.md`。`button
 - Light / Dark 下 button 视觉可用。
 - 移动端点击热区不小于 44×44px。
 - 不做自有 CLI，继续使用 shadcn CLI 安装。
+
+当前判断：registry 产物和受限环境静态安装验证已经通过；完整外部项目 build、浏览器渲染截图和 npm 发布准备仍未关闭。

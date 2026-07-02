@@ -7,7 +7,6 @@ import {
   AvatarFallback,
   AvatarImage,
 } from "@/registry/new-york-v4/ui/avatar"
-import { Button } from "@/registry/new-york-v4/ui/button"
 import {
   Card,
   CardContent,
@@ -36,6 +35,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/registry/new-york-v4/ui/popover"
+import { Button } from "@/styles/radix-weibo/ui/button"
 
 const teamMembers = [
   {

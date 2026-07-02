@@ -14,7 +14,6 @@ import {
   baseColorsOKLCH,
   type BaseColor,
 } from "@/registry/_legacy-base-colors"
-import { Button } from "@/registry/new-york-v4/ui/button"
 import {
   Dialog,
   DialogContent,
@@ -47,6 +46,7 @@ import {
   TabsList,
   TabsTrigger,
 } from "@/registry/new-york-v4/ui/tabs"
+import { Button } from "@/styles/radix-weibo/ui/button"
 
 interface BaseColorOKLCH {
   light: Record<string, string>

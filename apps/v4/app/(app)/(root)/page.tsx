@@ -10,7 +10,7 @@ import {
   PageHeaderDescription,
   PageHeaderHeading,
 } from "@/components/page-header"
-import { Button } from "@/styles/radix-nova/ui/button"
+import { Button } from "@/styles/radix-weibo/ui/button"
 
 import { CardsDemo } from "./cards"
 

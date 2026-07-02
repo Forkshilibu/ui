@@ -13,7 +13,6 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/registry/new-york-v4/ui/alert-dialog"
-import { Button } from "@/registry/new-york-v4/ui/button"
 import {
   Dialog,
   DialogClose,
@@ -32,6 +31,7 @@ import {
 } from "@/registry/new-york-v4/ui/dropdown-menu"
 import { Label } from "@/registry/new-york-v4/ui/label"
 import { Switch } from "@/registry/new-york-v4/ui/switch"
+import { Button } from "@/styles/radix-weibo/ui/button"
 
 export function PresetActions() {
   const [open, setIsOpen] = React.useState(false)

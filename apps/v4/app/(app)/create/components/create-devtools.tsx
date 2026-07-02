@@ -3,7 +3,7 @@
 import * as React from "react"
 
 import { BASES } from "@/registry/config"
-import { Button } from "@/registry/new-york-v4/ui/button"
+import { Button } from "@/styles/radix-weibo/ui/button"
 import { getDocsPathForItem } from "@/app/(app)/create/lib/devtools"
 import {
   serializeDesignSystemSearchParams,

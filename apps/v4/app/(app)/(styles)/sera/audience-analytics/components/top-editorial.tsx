@@ -3,7 +3,6 @@
 import * as React from "react"
 import { ArrowDownIcon, MoreHorizontalIcon } from "lucide-react"
 
-import { Button } from "@/styles/base-sera/ui/button"
 import {
   Card,
   CardContent,
@@ -31,6 +30,7 @@ import {
   ToggleGroup,
   ToggleGroupItem,
 } from "@/styles/base-sera/ui/toggle-group"
+import { Button } from "@/styles/radix-weibo/ui/button"
 
 type EditorialMetric = "views" | "time" | "shares"
 

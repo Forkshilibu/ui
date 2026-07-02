@@ -3,7 +3,6 @@
 import * as React from "react"
 
 import { Icons } from "@/components/icons"
-import { Button } from "@/styles/base-nova/ui/button"
 import {
   Dialog,
   DialogClose,
@@ -13,6 +12,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/styles/base-nova/ui/dialog"
+import { Button } from "@/styles/radix-weibo/ui/button"
 
 const STORAGE_KEY = "shadcn-create-welcome-dialog"
 

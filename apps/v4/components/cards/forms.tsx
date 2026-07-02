@@ -1,6 +1,5 @@
 "use client"
 
-import { Button } from "@/registry/new-york-v4/ui/button"
 import {
   Card,
   CardContent,
@@ -25,6 +24,7 @@ import {
   RadioGroupItem,
 } from "@/registry/new-york-v4/ui/radio-group"
 import { Textarea } from "@/registry/new-york-v4/ui/textarea"
+import { Button } from "@/styles/radix-weibo/ui/button"
 
 const plans = [
   {

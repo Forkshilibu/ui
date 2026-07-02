@@ -5,7 +5,6 @@ import Script from "next/script"
 
 import { cn } from "@/lib/utils"
 import { useIsMobile } from "@/hooks/use-mobile"
-import { Button } from "@/styles/base-nova/ui/button"
 import {
   Dialog,
   DialogClose,
@@ -28,6 +27,7 @@ import {
 } from "@/styles/base-nova/ui/drawer"
 import { Field, FieldContent, FieldLabel } from "@/styles/base-nova/ui/field"
 import { Input } from "@/styles/base-nova/ui/input"
+import { Button } from "@/styles/radix-weibo/ui/button"
 import {
   OPEN_PRESET_FORWARD_TYPE,
   useOpenPreset,

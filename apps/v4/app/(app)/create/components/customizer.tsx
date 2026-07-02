@@ -6,7 +6,6 @@ import { type RegistryItem } from "shadcn/schema"
 
 import { useIsMobile } from "@/hooks/use-mobile"
 import { getThemesForBaseColor, STYLES } from "@/registry/config"
-import { Button } from "@/styles/base-nova/ui/button"
 import {
   Card,
   CardContent,
@@ -14,6 +13,7 @@ import {
   CardHeader,
 } from "@/styles/base-nova/ui/card"
 import { FieldGroup, FieldSeparator } from "@/styles/base-nova/ui/field"
+import { Button } from "@/styles/radix-weibo/ui/button"
 import { MenuAccentPicker } from "@/app/(app)/create/components/accent-picker"
 import { ActionMenu } from "@/app/(app)/create/components/action-menu"
 import { BaseColorPicker } from "@/app/(app)/create/components/base-color-picker"
