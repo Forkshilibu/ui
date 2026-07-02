@@ -29,6 +29,7 @@ pnpm weiboui:validate-registry
 - `style-weibo.css` 是否存在关键 token 映射。
 - `base-weibo` / `radix-weibo` 的 registry index、button 和 button example 是否存在。
 - 生成后的 `base-weibo` / `radix-weibo` Button 源码是否包含关键 weibo token class。
+- `base-weibo` / `radix-weibo` Button registry JSON 是否包含运行所需依赖元数据。
 
 如果这一步失败，不要继续做 Next / Vite 外部验证，应先修复 registry 源文件或重新执行 registry build。
 

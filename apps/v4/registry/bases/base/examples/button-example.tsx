@@ -16,6 +16,7 @@ export default function ButtonExample() {
       <ButtonIconOnly />
       <ButtonStates />
       <ButtonThemes />
+      <ButtonMobileAndDesktop />
       <ButtonInvalidStates />
       <ButtonExamples />
     </ExampleWrapper>
@@ -1025,6 +1026,59 @@ function ButtonThemes() {
             <Button>Publish</Button>
             <Button variant="secondary">Followed</Button>
             <Button variant="outline">More</Button>
+          </div>
+        </div>
+      </div>
+    </Example>
+  )
+}
+
+function ButtonMobileAndDesktop() {
+  return (
+    <Example title="Mobile & Desktop">
+      <div className="grid gap-4 lg:grid-cols-2">
+        <div className="style-weibo border-btn-gray-stroke text-c-content rounded-2xl border bg-white p-4">
+          <div className="text-label-md mb-3">Mobile actions</div>
+          <div className="flex flex-col gap-3">
+            <Button className="w-full">Post now</Button>
+            <Button className="w-full" variant="secondary">
+              Save draft
+            </Button>
+            <div className="flex gap-3">
+              <Button className="flex-1" variant="outline">
+                More
+              </Button>
+              <Button size="icon" aria-label="Open composer settings">
+                <IconPlaceholder
+                  lucide="SettingsIcon"
+                  tabler="IconSettings"
+                  hugeicons="Settings02Icon"
+                  phosphor="GearSixIcon"
+                  remixicon="RiSettings3Line"
+                />
+              </Button>
+            </div>
+          </div>
+        </div>
+        <div className="style-weibo border-btn-gray-stroke text-c-content rounded-2xl border bg-white p-4">
+          <div className="text-label-md mb-3">Desktop toolbar</div>
+          <div className="flex flex-wrap items-center gap-2">
+            <Button size="sm">Publish</Button>
+            <Button size="sm" variant="secondary">
+              Schedule
+            </Button>
+            <Button size="sm" variant="outline">
+              Preview
+            </Button>
+            <Button size="icon-sm" variant="ghost" aria-label="More actions">
+              <IconPlaceholder
+                lucide="EllipsisIcon"
+                tabler="IconDots"
+                hugeicons="MoreHorizontalIcon"
+                phosphor="DotsThreeIcon"
+                remixicon="RiMoreLine"
+              />
+            </Button>
           </div>
         </div>
       </div>
