@@ -19,6 +19,7 @@ const BASE_STYLE = {
   css: {
     '@import "tw-animate-css"': {},
     '@import "shadcn/tailwind.css"': {},
+    ...WEIBO_STYLE_CSS,
     "@layer base": {
       "*": {
         "@apply border-border outline-ring/50": {},
@@ -28,7 +29,9 @@ const BASE_STYLE = {
       },
     },
   },
-  cssVars: {},
+  cssVars: {
+    theme: WEIBO_THEME_CSS_VARS,
+  },
   files: [],
 }
 
