@@ -7,7 +7,12 @@
       "dependencies": ["class-variance-authority", "lucide-react", "radix-ui"],
       "devDependencies": ["tw-animate-css", "shadcn"],
       "registryDependencies": ["utils"],
-      "files": [],
+      "files": [
+        {
+          "path": "registry/radix-weibo/lib/utils.ts",
+          "type": "registry:lib"
+        }
+      ],
       "cssVars": {
         "theme": {
           "--color-c-content": "var(--w-c-content)",
@@ -208,7 +213,12 @@
       "dependencies": ["class-variance-authority", "lucide-react", "radix-ui"],
       "devDependencies": ["tw-animate-css", "shadcn"],
       "registryDependencies": ["utils"],
-      "files": [],
+      "files": [
+        {
+          "path": "registry/radix-weibo/lib/utils.ts",
+          "type": "registry:lib"
+        }
+      ],
       "cssVars": {
         "theme": {
           "--color-c-content": "var(--w-c-content)",
@@ -524,6 +534,7 @@
     {
       "name": "button",
       "dependencies": ["class-variance-authority", "radix-ui"],
+      "registryDependencies": ["utils"],
       "files": [
         {
           "path": "registry/radix-weibo/ui/button.tsx",

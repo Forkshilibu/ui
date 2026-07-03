@@ -4,6 +4,9 @@
   "dependencies": [
     "class-variance-authority"
   ],
+  "registryDependencies": [
+    "utils"
+  ],
   "files": [
     {
       "path": "registry/base-weibo/ui/button.tsx",

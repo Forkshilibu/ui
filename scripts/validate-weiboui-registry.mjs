@@ -174,6 +174,20 @@ async function main() {
     "apps/v4/public/r/styles/radix-weibo/button.json"
   )
 
+  includesAll(
+    JSON.stringify(baseButtonRegistry.registryDependencies ?? []),
+    ["utils"],
+    "base button registry dependency",
+    "apps/v4/public/r/styles/base-weibo/button.json"
+  )
+
+  includesAll(
+    JSON.stringify(radixButtonRegistry.registryDependencies ?? []),
+    ["utils"],
+    "radix button registry dependency",
+    "apps/v4/public/r/styles/radix-weibo/button.json"
+  )
+
   const buttonExampleFiles = [
     "apps/v4/registry/bases/base/examples/button-example.tsx",
     "apps/v4/registry/bases/radix/examples/button-example.tsx",
@@ -270,6 +284,12 @@ async function main() {
       JSON.stringify(item.cssVars?.theme ?? {}),
       registryThemeTokens,
       `${label} registry theme token`,
+      `apps/v4/public/r/styles/${label}/index.json`
+    )
+    includesAll(
+      JSON.stringify(item.files ?? []),
+      ["lib/utils.ts"],
+      `${label} registry style bundled utility`,
       `apps/v4/public/r/styles/${label}/index.json`
     )
 

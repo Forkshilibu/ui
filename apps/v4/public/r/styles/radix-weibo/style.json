@@ -13,7 +13,13 @@
   "registryDependencies": [
     "utils"
   ],
-  "files": [],
+  "files": [
+    {
+      "path": "registry/radix-weibo/lib/utils.ts",
+      "content": "import { clsx, type ClassValue } from \"clsx\"\nimport { extendTailwindMerge } from \"tailwind-merge\"\n\nconst twMerge = extendTailwindMerge({\n  extend: {\n    theme: {\n      color: [\n        \"c-content\",\n        \"c-content-disabled\",\n        \"c-contrast\",\n        \"c-focus\",\n        \"c-alart\",\n        \"btn-orange-a\",\n        \"btn-orange-b\",\n        \"btn-orange-pressed-a\",\n        \"btn-orange-pressed-b\",\n        \"btn-gray\",\n        \"btn-gray-pressed\",\n        \"btn-gray-disabled\",\n        \"btn-gray-stroke\",\n        \"btn-link\",\n        \"btn-link-pressed\",\n      ],\n      text: [\"label-lg\", \"label-md\", \"label-sm\"],\n    },\n  },\n})\n\nexport function cn(...inputs: ClassValue[]) {\n  return twMerge(clsx(inputs))\n}\n",
+      "type": "registry:lib"
+    }
+  ],
   "cssVars": {
     "theme": {
       "--color-c-content": "var(--w-c-content)",

@@ -144,24 +144,44 @@ function applyStyleRegistryMetadata(
   item: RegistryItem,
   styleName: string
 ): RegistryItem {
-  if (styleName !== "weibo" || item.type !== "registry:style") {
+  if (styleName !== "weibo") {
     return item
   }
 
-  return {
-    ...item,
-    css: {
-      ...(item.css ?? {}),
-      ...WEIBO_STYLE_CSS,
-    },
-    cssVars: {
-      ...(item.cssVars ?? {}),
-      theme: {
-        ...(item.cssVars?.theme ?? {}),
-        ...WEIBO_THEME_CSS_VARS,
+  if (item.type === "registry:style") {
+    return {
+      ...item,
+      css: {
+        ...(item.css ?? {}),
+        ...WEIBO_STYLE_CSS,
       },
-    },
+      cssVars: {
+        ...(item.cssVars ?? {}),
+        theme: {
+          ...(item.cssVars?.theme ?? {}),
+          ...WEIBO_THEME_CSS_VARS,
+        },
+      },
+      files: [
+        ...(item.files ?? []),
+        {
+          path: "lib/utils.ts",
+          type: "registry:lib",
+        },
+      ],
+    }
   }
+
+  if (item.name === "button") {
+    return {
+      ...item,
+      registryDependencies: Array.from(
+        new Set([...(item.registryDependencies ?? []), "utils"])
+      ),
+    }
+  }
+
+  return item
 }
 
 function getStyleCombination(styleName: string) {

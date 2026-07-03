@@ -11,7 +11,12 @@
       ],
       "devDependencies": ["tw-animate-css", "shadcn"],
       "registryDependencies": ["utils"],
-      "files": [],
+      "files": [
+        {
+          "path": "registry/base-weibo/lib/utils.ts",
+          "type": "registry:lib"
+        }
+      ],
       "cssVars": {
         "theme": {
           "--color-c-content": "var(--w-c-content)",
@@ -216,7 +221,12 @@
       ],
       "devDependencies": ["tw-animate-css", "shadcn"],
       "registryDependencies": ["utils"],
-      "files": [],
+      "files": [
+        {
+          "path": "registry/base-weibo/lib/utils.ts",
+          "type": "registry:lib"
+        }
+      ],
       "cssVars": {
         "theme": {
           "--color-c-content": "var(--w-c-content)",
@@ -531,6 +541,7 @@
     {
       "name": "button",
       "dependencies": ["class-variance-authority"],
+      "registryDependencies": ["utils"],
       "files": [
         {
           "path": "registry/base-weibo/ui/button.tsx",
