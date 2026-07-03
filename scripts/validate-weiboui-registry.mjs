@@ -217,6 +217,41 @@ async function main() {
     )
   }
 
+  const registryCssTokens = [
+    ".style-weibo",
+    "--w-btn-orange-a",
+    "&.dark, .dark &",
+  ]
+  const registryThemeTokens = [
+    "--color-btn-orange-a",
+    "--spacing-md-compact",
+    "--text-label-lg",
+  ]
+
+  for (const [label, item] of [
+    ["radix-weibo", radixIndex],
+    ["base-weibo", baseIndex],
+  ]) {
+    includesAll(
+      JSON.stringify(item.css ?? {}),
+      registryCssTokens,
+      `${label} registry scoped style token`,
+      `apps/v4/public/r/styles/${label}/index.json`
+    )
+    includesAll(
+      JSON.stringify(item.cssVars?.theme ?? {}),
+      registryThemeTokens,
+      `${label} registry theme token`,
+      `apps/v4/public/r/styles/${label}/index.json`
+    )
+
+    if (JSON.stringify(item.css?.[".style-weibo"] ?? {}).includes("color")) {
+      throw new Error(
+        `${label} .style-weibo must only define tokens and must not set a color declaration`
+      )
+    }
+  }
+
   console.log(
     "weiboUI registry artifacts and Button examples are ready for Next and Vite validation."
   )
