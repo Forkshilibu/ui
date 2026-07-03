@@ -12,11 +12,8 @@
       "devDependencies": ["tw-animate-css", "shadcn"],
       "registryDependencies": ["utils"],
       "files": [],
-      "cssVars": {},
-      "css": {
-        "@import \"tw-animate-css\"": {},
-        "@import \"shadcn/tailwind.css\"": {},
-        "@theme inline": {
+      "cssVars": {
+        "theme": {
           "--color-c-content": "var(--w-c-content)",
           "--color-c-content-disabled": "var(--w-c-content-disabled)",
           "--color-c-contrast": "var(--w-c-contrast)",
@@ -44,7 +41,11 @@
           "--text-label-md--line-height": "20px",
           "--text-label-sm": "12px",
           "--text-label-sm--line-height": "18px"
-        },
+        }
+      },
+      "css": {
+        "@import \"tw-animate-css\"": {},
+        "@import \"shadcn/tailwind.css\"": {},
         ".style-weibo": {
           "--w-c-brand": "#ff8200",
           "--w-c-brand-dark": "#ea8011",
@@ -142,11 +143,8 @@
       "devDependencies": ["tw-animate-css", "shadcn"],
       "registryDependencies": ["utils"],
       "files": [],
-      "cssVars": {},
-      "css": {
-        "@import \"tw-animate-css\"": {},
-        "@import \"shadcn/tailwind.css\"": {},
-        "@theme inline": {
+      "cssVars": {
+        "theme": {
           "--color-c-content": "var(--w-c-content)",
           "--color-c-content-disabled": "var(--w-c-content-disabled)",
           "--color-c-contrast": "var(--w-c-contrast)",
@@ -174,7 +172,11 @@
           "--text-label-md--line-height": "20px",
           "--text-label-sm": "12px",
           "--text-label-sm--line-height": "18px"
-        },
+        }
+      },
+      "css": {
+        "@import \"tw-animate-css\"": {},
+        "@import \"shadcn/tailwind.css\"": {},
         ".style-weibo": {
           "--w-c-brand": "#ff8200",
           "--w-c-brand-dark": "#ea8011",

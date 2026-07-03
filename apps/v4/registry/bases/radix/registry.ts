@@ -2,7 +2,10 @@ import { registryItemSchema, type Registry } from "shadcn/schema"
 import { z } from "zod"
 
 import { fonts } from "@/registry/fonts"
-import { WEIBO_STYLE_CSS } from "@/registry/styles/weibo-tokens"
+import {
+  WEIBO_STYLE_CSS,
+  WEIBO_THEME_CSS_VARS,
+} from "@/registry/styles/weibo-tokens"
 
 import { blocks } from "./blocks/_registry"
 import { components } from "./components/_registry"
@@ -31,7 +34,9 @@ const RADIX_STYLE = {
       },
     },
   },
-  cssVars: {},
+  cssVars: {
+    theme: WEIBO_THEME_CSS_VARS,
+  },
   files: [],
 }
 

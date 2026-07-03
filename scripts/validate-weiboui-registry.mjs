@@ -217,12 +217,15 @@ async function main() {
     )
   }
 
-  const registryStyleTokens = [
-    "@theme inline",
+  const registryCssTokens = [
     ".style-weibo",
-    "--color-btn-orange-a",
     "--w-btn-orange-a",
     "&.dark, .dark &",
+  ]
+  const registryThemeTokens = [
+    "--color-btn-orange-a",
+    "--spacing-md-compact",
+    "--text-label-lg",
   ]
 
   for (const [label, item] of [
@@ -231,8 +234,14 @@ async function main() {
   ]) {
     includesAll(
       JSON.stringify(item.css ?? {}),
-      registryStyleTokens,
-      `${label} registry style token`,
+      registryCssTokens,
+      `${label} registry scoped style token`,
+      `apps/v4/public/r/styles/${label}/index.json`
+    )
+    includesAll(
+      JSON.stringify(item.cssVars?.theme ?? {}),
+      registryThemeTokens,
+      `${label} registry theme token`,
       `apps/v4/public/r/styles/${label}/index.json`
     )
   }
