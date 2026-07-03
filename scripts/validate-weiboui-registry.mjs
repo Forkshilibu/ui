@@ -11,9 +11,11 @@ const requiredFiles = [
   "apps/v4/public/r/styles/base-weibo/index.json",
   "apps/v4/public/r/styles/base-weibo/button.json",
   "apps/v4/public/r/styles/base-weibo/button-example.json",
+  "apps/v4/public/r/styles/base-weibo/utils.json",
   "apps/v4/public/r/styles/radix-weibo/index.json",
   "apps/v4/public/r/styles/radix-weibo/button.json",
   "apps/v4/public/r/styles/radix-weibo/button-example.json",
+  "apps/v4/public/r/styles/radix-weibo/utils.json",
   "apps/v4/registry/bases/base/examples/button-example.tsx",
   "apps/v4/registry/bases/radix/examples/button-example.tsx",
   "apps/v4/styles/base-weibo/ui/button.tsx",
@@ -39,8 +41,9 @@ const buttonTokenClasses = [
   "active:to-btn-orange-pressed-b",
   "bg-btn-gray",
   "border-btn-gray-stroke",
-  "text-label-lg",
+  "text-[length:var(--text-label-lg)]",
   "min-h-11",
+  "text-c-contrast",
 ]
 
 const buttonExampleTokens = [
@@ -65,6 +68,16 @@ const styleTokens = [
   "--shadow-orange-glow: var(--w-shadow-orange-glow);",
   "--w-c-brand: #ff8200;",
   "&.dark,",
+]
+
+const utilsTokens = [
+  "extendTailwindMerge",
+  "c-content",
+  "c-contrast",
+  "btn-link-pressed",
+  "label-lg",
+  "label-md",
+  "label-sm",
 ]
 
 function includesAll(content, tokens, label, file) {
@@ -109,6 +122,15 @@ async function main() {
     "apps/v4/registry/styles/style-weibo.css"
   )
 
+  const utilsTargets = [
+    "apps/v4/public/r/styles/base-weibo/utils.json",
+    "apps/v4/public/r/styles/radix-weibo/utils.json",
+  ]
+
+  for (const file of utilsTargets) {
+    includesAll(fileContents.get(file), utilsTokens, "weibo twMerge token", file)
+  }
+
   const registryTargets = [
     "apps/v4/public/r/styles/base-weibo/button.json",
     "apps/v4/public/r/styles/radix-weibo/button.json",
@@ -123,6 +145,12 @@ async function main() {
       "button token class",
       file
     )
+
+    if (fileContents.get(file).includes('"text-label-lg')) {
+      throw new Error(
+        `${file} must use typed arbitrary text-size utilities so tailwind-merge does not remove text color utilities`
+      )
+    }
   }
 
   const baseButtonRegistry = JSON.parse(
@@ -215,6 +243,41 @@ async function main() {
     throw new Error(
       "weibo registry indexes must expose registry index metadata"
     )
+  }
+
+  const registryCssTokens = [
+    ".style-weibo",
+    "--w-btn-orange-a",
+    "&.dark, .dark &",
+  ]
+  const registryThemeTokens = [
+    "--color-btn-orange-a",
+    "--spacing-md-compact",
+    "--text-label-lg",
+  ]
+
+  for (const [label, item] of [
+    ["radix-weibo", radixIndex],
+    ["base-weibo", baseIndex],
+  ]) {
+    includesAll(
+      JSON.stringify(item.css ?? {}),
+      registryCssTokens,
+      `${label} registry scoped style token`,
+      `apps/v4/public/r/styles/${label}/index.json`
+    )
+    includesAll(
+      JSON.stringify(item.cssVars?.theme ?? {}),
+      registryThemeTokens,
+      `${label} registry theme token`,
+      `apps/v4/public/r/styles/${label}/index.json`
+    )
+
+    if (JSON.stringify(item.css?.[".style-weibo"] ?? {}).includes("color")) {
+      throw new Error(
+        `${label} .style-weibo must only define tokens and must not set a color declaration`
+      )
+    }
   }
 
   console.log(
