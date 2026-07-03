@@ -99,7 +99,6 @@
       "--w-spacing-lg": "16px",
       "--w-spacing-xl": "24px",
       "--w-shadow-orange-glow": "0 0 12px 0 #ff820026, 0 0 24px 0 #ff820014",
-      "color": "var(--w-c-content)",
       "&.dark, .dark &": {
         "--w-c-brand": "var(--w-c-brand-dark)",
         "--w-c-content": "var(--w-c-content-dark)",

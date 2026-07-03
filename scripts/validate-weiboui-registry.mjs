@@ -244,6 +244,12 @@ async function main() {
       `${label} registry theme token`,
       `apps/v4/public/r/styles/${label}/index.json`
     )
+
+    if (JSON.stringify(item.css?.[".style-weibo"] ?? {}).includes("color")) {
+      throw new Error(
+        `${label} .style-weibo must only define tokens and must not set a color declaration`
+      )
+    }
   }
 
   console.log(
