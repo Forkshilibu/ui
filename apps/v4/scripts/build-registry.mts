@@ -22,6 +22,10 @@ import { BASE_COLORS } from "@/registry/base-colors"
 import { BASES, type Base } from "@/registry/bases"
 import { PRESETS } from "@/registry/config"
 import { STYLES } from "@/registry/styles"
+import {
+  WEIBO_STYLE_CSS,
+  WEIBO_THEME_CSS_VARS,
+} from "@/registry/styles/weibo-tokens"
 
 /*
  * build-registry.mts is the single v4 registry pipeline.
@@ -134,6 +138,30 @@ function getStylesToBuild() {
   }
 
   return Array.from(stylesToBuild.values())
+}
+
+function applyStyleRegistryMetadata(
+  item: RegistryItem,
+  styleName: string
+): RegistryItem {
+  if (styleName !== "weibo" || item.type !== "registry:style") {
+    return item
+  }
+
+  return {
+    ...item,
+    css: {
+      ...(item.css ?? {}),
+      ...WEIBO_STYLE_CSS,
+    },
+    cssVars: {
+      ...(item.cssVars ?? {}),
+      theme: {
+        ...(item.cssVars?.theme ?? {}),
+        ...WEIBO_THEME_CSS_VARS,
+      },
+    },
+  }
 }
 
 function getStyleCombination(styleName: string) {
@@ -987,7 +1015,9 @@ async function buildBases(bases: Base[], targetStyleNames?: Set<string>) {
 
       const styleRegistry = {
         ...baseRegistry,
-        items: registryItems,
+        items: registryItems.map((item) =>
+          applyStyleRegistryMetadata(item, style.name)
+        ),
       }
       const registryTs = `export const registry = ${JSON.stringify(styleRegistry, null, 2)}\n`
       await fs.writeFile(path.join(styleOutputDir, "registry.ts"), registryTs)
